@@ -12,7 +12,7 @@
    For examplem we can use :root to define colors
 */
 :root {
-    --color-accent: oklch(65% 50% 0); /* Primary accent color in OKLCH format */
+    --accent-color: hsl(250, 100%, 34%); /* Primary accent color in OKLCH format */
     --border-gray: oklch(80% 3% 200); /* Gray for borders */
     /* ADD the rest of the color definitions here if needed! */
 }
@@ -27,7 +27,7 @@ body {
     max-width: 100ch; /*Limits width to 50 rems for better readability */
     margin-inline: auto;
     writing-mode: horizontal-tb;/* Add here margin-inline */
-    /* Add here padding around the body */
+    padding: 2em/* Add here padding around the body */
 }
 
 
@@ -47,7 +47,7 @@ nav li {
 nav {
     display: flex; /* Turns nav into a flex container */
 
-    /* You will need to continue writing here for step 2.3 */
+    border-bottom: 1px solid oklch(80% 3% 200); /* You will need to continue writing here for step 2.3 */
 }
 
 /* Step 2.3: Style navigation links for each element <a> */
@@ -56,14 +56,15 @@ nav a {
     text-decoration: none; /* Remove the underline from the links by setting */
     /* Add here color */
     /* Add here text-align */
-    /* Add here padding */
-    /* Add here margin-bottom */
+    padding: 0.5em;/* Add here padding */
+    margin-top: 1em;/* Add here margin-bottom */
 }
     /* NOTE: please make sure that in each index.html page you add class="current" to the current page*/
         /* For example:  <a href="index.html" class="current">Home</a> */ 
 
         nav a.current {
-    /* Add here what your current page should look like at the navigation bar (highlight)*/
+            border-bottom: 4px solid oklch(80% 3% 200);
+            /* Add here what your current page should look like at the navigation bar (highlight)*/
 }
 
 /* Before jumping to the next step, remember to complete wtep 2.3 by editing 'nav' */
@@ -72,7 +73,8 @@ nav a {
    Step 2.4: Accent color and hover styles
 */
 nav a:hover {
-    /* Add here hover effects */
+    border-bottom: 4px solid var(--accent-color);
+    background-color: var(--color-accent); /* Add here hover effects */
 }
 
 
