@@ -74,7 +74,7 @@ nav a {
 */
 nav a:hover {
     border-bottom: 4px solid var(--accent-color);
-    background-color: var(--color-accent); /* Add here hover effects */
+    background-color: hsl(247, 46%, 89%); /* Add here hover effects */
 }
 
 
@@ -95,10 +95,35 @@ label, input, textarea, button { /* We define the elements in which we want this
     /* add width here*/
     /* add box-sizing here */
 }
+
+input, textarea, button { /* We define the elements in which we want this to take effect */
+    
+    box-sizing: border-box;
+    width: 100%;
+    border: solid #5B6DCD 1px;
+    padding: 5px;/* add width here*/
+    /* add box-sizing here */
+}
+
 label { /* We'll add the spacing between labels here */
     margin-block: 0.5rem;
 }
 
+form { 
+    display: grid;
+    gap: 1em; /* Space between form elements */
+}
+
+.form-example {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Label takes auto width, input takes remaining */
+    align-items: center; /* Aligns items in the same row */
+    gap: 0.5em; /* Adds a small space between label and input */
+}
+
+textarea {
+    width: 100%; /* Makes textarea align with inputs */
+}
 /* Step 3.2: Grid layout */
  
     /* 
@@ -109,8 +134,43 @@ label { /* We'll add the spacing between labels here */
 
 
 /* STEP 4: Style your projects page */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em; /* Space between articles */
+}
 
+article {
+    display: grid;
+    grid-template-rows: subgrid; /* Aligns rows across articles */
+    grid-row: span 3; /* Each article spans 3 rows */
+    gap: 0.5em; /* Space between elements inside article */
+    padding: 1em;
+    border: 1px solid #ccc; /* Optional styling */
+    background: #f9f9f9; /* Light background for clarity */
+}
 
+h1 {
+    font-size: 400%; /* Makes h1 four times the body text size */
+    font-weight: bold; /* Ensures it stands out */
+    margin: 0.5em 0; /* Adds some spacing */
+}
+
+h2 {
+    margin: 0; /* Removes extra spacing */
+}
+
+img {
+    width: 100%; /* Makes images responsive */
+    height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1; /* Tighter spacing for headings */
+    text-wrap: balance; /* Prevents uneven line breaks */
+    font-weight: bold; /* Ensures clear hierarchy */
+    margin: 0.5em 0; /* Consistent spacing */
+}
 
 
 
