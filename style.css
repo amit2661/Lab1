@@ -13,10 +13,24 @@
 */
 :root {
     --accent-color: hsl(250, 100%, 34%); /* Primary accent color in OKLCH format */
-    --border-gray: oklch(80% 3% 200); /* Gray for borders */
+    --border-gray: oklch(80% 3% 200);
+     /* Gray for borders */
     /* ADD the rest of the color definitions here if needed! */
+
+    color-scheme: dark;
 }
 
+.color-scheme {
+    position: absolute;
+    top: 1rem;    /* Adjusts distance from the top */
+    right: 1rem;  /* Adjusts distance from the right */
+    display: inline-flex;
+    gap: 5px;
+    font: 80%
+    padding: 5px 10px;
+    border-radius: 5px;
+    
+}
 /* STEP 1: Prevent content from getting too wide */
 
 /* 
@@ -46,8 +60,8 @@ nav li {
 /* Step 2.2: Apply Flexbox to the navigation */
 nav {
     display: flex; /* Turns nav into a flex container */
-
-    border-bottom: 1px solid oklch(80% 3% 200); /* You will need to continue writing here for step 2.3 */
+    --border-color: oklch(50% 10% 200 / 40%);
+    border-bottom: 1px solid var(--border-color); /* You will need to continue writing here for step 2.3 */
 }
 
 /* Step 2.3: Style navigation links for each element <a> */
@@ -74,7 +88,7 @@ nav a {
 */
 nav a:hover {
     border-bottom: 4px solid var(--accent-color);
-    background-color: hsl(247, 46%, 89%); /* Add here hover effects */
+    background-color: color-mix(in oklch, var(--accent-color), canvas 85%); /* Add here hover effects */
 }
 
 
@@ -82,7 +96,7 @@ nav a:hover {
 
 /* Step 3.1: Integrate typography */
     /* (you do not need to make any changes here for step 2.1, but please take note of it!) */
-input,
+select, input,
 textarea,
 button {
     font: inherit; /* Ensures form elements use the same font as the body */
